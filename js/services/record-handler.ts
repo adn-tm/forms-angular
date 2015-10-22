@@ -475,6 +475,7 @@ module fng.services {
               } else {
                 processServerData(data, $scope, ctrlState);
                 $scope.setPristine();
+                routingService.redirectTo()('list', $scope, $location
               }
             } else {
               $scope.showError(data);
@@ -493,7 +494,7 @@ module fng.services {
               if (options.redirect) {
                 $window.location = options.redirect;
               } else {
-                routingService.redirectTo()('edit', $scope, $location, data._id);
+                routingService.redirectTo()('list', $scope, $location);
               }
             } else {
               $scope.showError(data);
